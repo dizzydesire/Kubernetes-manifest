@@ -24,7 +24,7 @@ spec:
           service:
             name: bank-frontend-service
             port:
-              number: 80
+              number: 3000
   - host: bankapi.cloudwitches.online
     http:
       paths:
