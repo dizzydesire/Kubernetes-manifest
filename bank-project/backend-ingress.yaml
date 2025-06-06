@@ -11,8 +11,8 @@ spec:
   ingressClassName: external-nginx
   tls:
   - hosts:
-    - bankapi.cloudwitches.online
-    - bank.cloudwitches.online
+    - bankapi.cloudwitches.online  # bankend url
+    - bank.cloudwitches.online     # frontend url
     secretName: bank-cloudwitches-online
   rules:
   - host: bank.cloudwitches.online

@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: frontend-banking-deployment
 spec:
-  replicas: 1 # Adjust as necessary
+  replicas: 1 
   selector:
     matchLabels:
       app: frontend-banking-deployment
