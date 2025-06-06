@@ -22,7 +22,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: argocd-server
+            name: bank-frontend-service
             port:
               number: 80
   - host: bankapi.cloudwitches.online
