@@ -21,5 +21,5 @@ spec:
         - name: REACT_APP_API_URL
           valueFrom:
             configMapKeyRef:
-              name: bank-frontend-config
+              name: bank-config
               key: REACT_APP_API_URL
