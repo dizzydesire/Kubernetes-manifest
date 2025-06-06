@@ -3,44 +3,44 @@ kind: Deployment
 metadata:
   name: bank-backend-deployment
 spec:
-  replicas: 1  # Adjust as necessary
+  replicas: 1
   selector:
     matchLabels:
-      app: bank-backend
+      app: bank-backend-deployment
   template:
     metadata:
       labels:
-        app: bank-backend
+        app: bank-backend-deployment
     spec:
       containers:
       - name: bank-backend-container
-        image: supportcloud160/bank-app-backend:b219162  # Replace this with your Docker image name
+        image: supportcloud160/bank-app-backend:b219162
         ports:
-        - containerPort: 8080  # Replace with your app's port if necessary
+        - containerPort: 8080
         env:
         - name: DB_HOST
           valueFrom:
             configMapKeyRef:
-              name: bank-backend-config
+              name: bank-config
               key: DB_HOST
         - name: DB_PORT
           valueFrom:
             configMapKeyRef:
-              name: bank-backend-config
+              name: bankconfig
               key: DB_PORT
         - name: DB_NAME
           valueFrom:
             configMapKeyRef:
-              name: bank-backend-config
+              name: bank-config
               key: DB_NAME
-              
+
         - name: DB_USERNAME
           valueFrom:
             secretKeyRef:
-              name: bank-backend-secret
+              name: bank-secret
               key: DB_USERNAME
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: bank-backend-secret
+              name: bank-secret
               key: DB_PASSWORD

@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   name: frontend-banking-deployment
 spec:
-  replicas: 1  # Adjust as necessary
+  replicas: 1 # Adjust as necessary
   selector:
     matchLabels:
-      app: frontend-banking
+      app: frontend-banking-deployment
   template:
     metadata:
       labels:
-        app: frontend-banking
+        app: frontend-banking-deployment
     spec:
       containers:
       - name: frontend-banking-container
         image: supportcloud160/bank-app-frontend:b219162
         ports:
-        - containerPort: 3000 
+        - containerPort: 3000
         env:
         - name: REACT_APP_API_URL
           valueFrom:
