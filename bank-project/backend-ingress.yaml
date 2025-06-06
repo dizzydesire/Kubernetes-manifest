@@ -32,6 +32,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: argocd-server
+            name: bank-backend-service
             port:
               number: 8080
