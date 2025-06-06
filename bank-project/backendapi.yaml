@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: bank-backend-container
-        image: supportcloud160/bank-app-backend:b219162
+        image: 272022677495.dkr.ecr.us-east-1.amazonaws.com/bank-backendapi:22
         ports:
         - containerPort: 8080
         env:
