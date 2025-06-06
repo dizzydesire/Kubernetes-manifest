@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-banking-deployment
+spec:
+  replicas: 1  # Adjust as necessary
+  selector:
+    matchLabels:
+      app: frontend-banking
+  template:
+    metadata:
+      labels:
+        app: frontend-banking
+    spec:
+      containers:
+      - name: frontend-banking-container
+        image: supportcloud160/bank-app-frontend:b219162
+        ports:
+        - containerPort: 3000 
+        env:
+        - name: REACT_APP_API_URL
+          valueFrom:
+            configMapKeyRef:
+              name: bank-frontend-config
+              key: REACT_APP_API_URL
