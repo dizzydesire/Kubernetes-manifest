@@ -11,11 +11,11 @@ spec:
   ingressClassName: external-nginx
   tls:
   - hosts:
-    - bankapi.cloudwitches.online  # bankend url
-    - bank.cloudwitches.online     # frontend url
-    secretName: bank-cloudwitches-online
+    - bankapi.skybound02.online  # bankend url
+    - bank.skybound02.online     # frontend url
+    secretName: bank-skybound02-online
   rules:
-  - host: bank.cloudwitches.online
+  - host: bank.skybound02.online
     http:
       paths:
       - path: /
@@ -25,7 +25,7 @@ spec:
             name: bank-frontend-service
             port:
               number: 3000
-  - host: bankapi.cloudwitches.online
+  - host: bankapi.skybound02.online
     http:
       paths:
       - path: /
