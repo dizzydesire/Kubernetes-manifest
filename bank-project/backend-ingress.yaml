@@ -11,11 +11,11 @@ spec:
   ingressClassName: external-nginx
   tls:
   - hosts:
-    - bankapi.teamcloudup.online  # bankend url
-    - bank.teamcloudup.online     # frontend url
+    - bankapi.dizzytech.online  # bankend url
+    - bank.dizzytech.online     # frontend url
     secretName: bank-teamcloudup-online
   rules:
-  - host: bank.teamcloudup.online
+  - host: bank.dizzytech.online
     http:
       paths:
       - path: /
@@ -25,7 +25,7 @@ spec:
             name: bank-frontend-service
             port:
               number: 3000
-  - host: bankapi.teamcloudup.online
+  - host: bankapi.dizzytech.online
     http:
       paths:
       - path: /
