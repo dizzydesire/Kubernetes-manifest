@@ -13,34 +13,33 @@ spec:
         app: bank-backend-deployment
     spec:
       containers:
-      - name: bank-backend-container
-        image: 381492269344.dkr.ecr.us-east-1.amazonaws.com/bank-backendapi:34
-        ports:
-        - containerPort: 8080
-        env:
-        - name: DB_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: bank-config
-              key: DB_HOST
-        - name: DB_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: bank-config
-              key: DB_PORT
-        - name: DB_NAME
-          valueFrom:
-            configMapKeyRef:
-              name: bank-config
-              key: DB_NAME
-
-        - name: DB_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: bank-secret
-              key: DB_USERNAME
-        - name: DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: bank-secret
-              key: DB_PASSWORD
+        - name: bank-backend-container
+          image: 381492269344.dkr.ecr.us-east-1.amazonaws.com/bank-backend:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: bank-config
+                  key: DB_HOST
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: bank-config
+                  key: DB_PORT
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: bank-config
+                  key: DB_NAME
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: bank-secret
+                  key: DB_USERNAME
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: bank-secret
+                  key: DB_PASSWORD
